@@ -5,6 +5,7 @@ import Nav from './components/NavBar/Nav.jsx';
 import Detail from './views/Detail';
 import About from './views/About';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
 //Router-Dom
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -14,14 +15,16 @@ function App() {
    const [characters,setCharacters] = useState([])
 
    function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)// URL vieja de la API = https://rickandmortyapi.com/api/character/${id}
       .then(({ data }) => {
          if (data.name) {
             setCharacters((characters) => [...characters, data]);
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
-      });
+      }).catch(error => {
+         window.alert(error.response.data);
+      })
    }
 
    function onClose(id) {
@@ -39,11 +42,14 @@ function App() {
          setAccess(true);
          navigate('/home');
       }
+      else {
+         window.alert("usuario y/o contraseña no valido");
+      }
    }
 
    useEffect(() => {
       !access && navigate('/');
-   }, [access]);
+   },[access]);
 
    return (
       <div className='App'>
@@ -53,6 +59,7 @@ function App() {
             <Route path = "/home" element={<Cards characters={characters} onClose={onClose} />}></Route>
             <Route path = "/about" element={<About/>}></Route>
             <Route path = "/detail/:id" element={<Detail/>}></Route>
+            <Route path = "/favorites" element={<Favorites/>}></Route>
          </Routes>
 
       </div>
