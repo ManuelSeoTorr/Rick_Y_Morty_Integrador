@@ -1,0 +1,81 @@
+.general{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+.container{
+    max-width: 350px;
+    width: 100%;
+    background:#11131e;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #656871;
+    box-shadow: 0px 1px 26px -10px greenyellow;
+}
+
+.container .header{
+    display: flex;
+    align-items: center;
+}
+
+.container img{
+    height: 200px;
+    width: 200px;
+    background: #656871;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header .details{
+    margin-left: 20px;
+}
+
+.details span{
+    display: block;
+    background: #656871;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.details .name{
+    width: fit-content;
+    padding: 4px;
+}
+
+.details .about{
+    width: fit-content;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+.container .description{
+    margin: 25px 0;
+}
+
+.description .line{
+    width: fit-content;
+    background: #656871;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.container .btns{
+    display: flex;
+}
+.container .btnsbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100%;
+    background: #656871;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}

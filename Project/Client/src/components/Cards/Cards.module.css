@@ -1,0 +1,33 @@
+/* .contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 40vh;
+} */
+
+body {
+    background-image: url(../../assets/Rick_andMorty_background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: right top;
+    margin-left:50px;
+    margin-right:50px;
+    background-attachment: fixed;
+  }
+
+.contenedor{
+    height: max-content;
+    display: flex;
+    gap: 8px;
+    padding: 0.4em;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
